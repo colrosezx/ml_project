@@ -1,6 +1,6 @@
 Проект: Предсказание цены домов с использованием PyTorch
 
-Описание
+## Описание
 
 Задача: предсказать стоимость жилых домов на основе табличных данных (площадь, год постройки, расположение и пр.) из соревнования Kaggle House Prices – Advanced Regression Techniques.
 
@@ -12,29 +12,32 @@
     -Визуализация процесса обучения и результатов (src/visualize.py)
     -Демонстрация пайплайна в Jupyter-тетрадке (notebooks/main.ipynb)
 
-*Структура проекта*
+## Структура проекта
 
+```
 ml_project/ 
 ├── data/ 
-│ ├── train.csv # Тренировочные данные 
-│ ├── test.csv # Тестовые данные 
-│ └── data_description.txt# Описание признаков 
+│   ├── train.csv            # Тренировочные данные 
+│   ├── test.csv             # Тестовые данные 
+│   └── data_description.txt # Описание признаков 
 ├── src/ 
-│ ├── data_loader.py # Загрузка CSV и создание DataLoader 
-│ ├── preprocess.py # Предобработка: пропуски, кодирование, масштабирование 
-│ ├── model.py # Определение MLP-архитектур (MLP1, MLP2) 
-│ ├── train.py # Скрипт тренировки моделей и оценки 
-│ ├── utils.py # Метрики (RMSE/MAE), сохранение и загрузка моделей 
-│ └── visualize.py # Построение графиков loss и предсказаний 
-├── notebooks/ │ └── main.ipynb # Jupyter Notebook с демонстрацией работы 
+│   ├── data_loader.py       # Загрузка CSV и создание DataLoader 
+│   ├── preprocess.py        # Предобработка: пропуски, кодирование, масштабирование 
+│   ├── model.py             # Определение MLP-архитектур (MLP1, MLP2) 
+│   ├── train.py             # Скрипт тренировки моделей и оценки 
+│   ├── utils.py             # Метрики (RMSE/MAE), сохранение и загрузка моделей 
+│   └── visualize.py         # Построение графиков loss и предсказаний 
+├── notebooks/ 
+│   └── main.ipynb           # Jupyter Notebook с демонстрацией работы 
 ├── outputs/ 
-│ ├── figures/ # PNG-графики (loss_curve.png, pred_vs_true.png) 
-│ └── models/ # Сохранённые .pt веса лучшей модели 
+│   ├── figures/             # PNG-графики (loss_curve.png, pred_vs_true.png) 
+│   └── models/              # Сохранённые .pt веса лучшей модели 
 ├── .gitignore 
-├── requirements.txt # Необходимые зависимости 
-└── README.md # Описание проекта
+├── requirements.txt         # Необходимые зависимости 
+└── README.md                # Описание проекта
+```
 
-Установка
+## Установка
 
 Клонировать репозиторий и перейти в директорию:
 
@@ -51,7 +54,7 @@ venv\Scripts\activate Windows
 pip install -r requirements.txt
 ```
 
-*Запуск*
+## Запуск
 
 Через Jupyter Notebook
 
@@ -66,9 +69,9 @@ jupyter notebook notebooks/main.ipynb
     -Визуализация кривых обучения и предсказаний
     -Сохранение лучшей модели и генерация submission.csv
 
-**Основные параметры**
+## Основные параметры
 
-*Архитектура:*
+### Архитектура:
 
     -MLP1: один скрытый слой
     -MLP2: два скрытых слоя + Dropout
@@ -78,7 +81,7 @@ jupyter notebook notebooks/main.ipynb
     -Batch size: 32
     -Epochs: 30
 
-*Результаты:*
+### Результаты:
 
     -Loss: outputs/figures/loss.png
     -Prediction Plot: outputs/figures/predictions.png
